@@ -1,6 +1,10 @@
-*.class
 
-# Package Files #
-*.jar
-*.war
-*.ear
+# IDE configuration
+.classpath
+.project
+.settings/
+
+# Build directories
+target/
+bin/
+
