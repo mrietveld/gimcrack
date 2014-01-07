@@ -203,27 +203,15 @@ public class TestMarshallingUtilsTest {
     @Test
     public void testCompareInstances() throws Exception {
 
-        StatefulKnowledgeSession ksessionA = null;
-        {
-            KieBaseConfiguration config = KnowledgeBaseFactory.newKnowledgeBaseConfiguration();
-            config.setOption(EventProcessingOption.STREAM);
-            KnowledgeBase knowledgeBaseA = KnowledgeBaseFactory.newKnowledgeBase(config);
-            KieSessionConfiguration ksconf = KnowledgeBaseFactory.newKnowledgeSessionConfiguration();
-            ksconf.setOption(ClockTypeOption.get("pseudo"));
-            ksconf.setOption(TimerJobFactoryOption.get("trackable"));
-            ksessionA = knowledgeBaseA.newStatefulKnowledgeSession(ksconf, null);
-        }
-
-        StatefulKnowledgeSession ksessionB = null;
-        {
-            KieBaseConfiguration config = KnowledgeBaseFactory.newKnowledgeBaseConfiguration();
-            config.setOption(EventProcessingOption.STREAM);
-            KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase(config);
-            KieSessionConfiguration ksconf = KnowledgeBaseFactory.newKnowledgeSessionConfiguration();
-            ksconf.setOption(ClockTypeOption.get("pseudo"));
-            ksconf.setOption( TimerJobFactoryOption.get("trackable") );
-            ksessionB = knowledgeBase.newStatefulKnowledgeSession(ksconf, null);
-        }
+        KieBaseConfiguration config = KnowledgeBaseFactory.newKnowledgeBaseConfiguration();
+        config.setOption(EventProcessingOption.STREAM);
+        KnowledgeBase knowledgeBase = KnowledgeBaseFactory.newKnowledgeBase(config);
+        KieSessionConfiguration ksconf = KnowledgeBaseFactory.newKnowledgeSessionConfiguration();
+        ksconf.setOption(ClockTypeOption.get("pseudo"));
+        ksconf.setOption(TimerJobFactoryOption.get("trackable"));
+        
+        StatefulKnowledgeSession ksessionA = knowledgeBase.newStatefulKnowledgeSession(ksconf, null);
+        StatefulKnowledgeSession ksessionB = knowledgeBase.newStatefulKnowledgeSession(ksconf, null);
 
         Assert.assertTrue(KieGimcrack.class.getSimpleName() + " is broken!", kieGimcrack.compareInstances(ksessionA, ksessionB));
     }

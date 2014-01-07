@@ -220,7 +220,7 @@ public class CompareViaReflectionUtil {
             same = true;
         }
         else if( objA == null || objB == null ) { 
-            context.name += "X";
+            context.name += "X (null)";
             same = false;
         }
         else if( objA == objB ) {
@@ -276,7 +276,7 @@ public class CompareViaReflectionUtil {
             }
         }
         else { 
-            context.name += ": X";
+            context.name += ": X (class)";
         }
 
         if( context.print ) { 
@@ -396,7 +396,7 @@ public class CompareViaReflectionUtil {
                 }
                 objClass = objClass.getSuperclass();
             } while( objClass != null && same);
-            context.name += ": " + (same == true ? "=" : "X");
+            context.name += ": " + (same ? "=" : "X");
         }
         catch( Exception e ) { 
             same = false;
@@ -441,7 +441,7 @@ public class CompareViaReflectionUtil {
             else {
                 same = objA.equals(objB);
             }
-            context.name += ": " + (same == true ? "=" : "X");
+            context.name += ": " + (same ? "=" : "X (" + objA.toString() + "/" + objB.toString() + ")");
         }
         catch( Exception e ) { 
             e.printStackTrace();

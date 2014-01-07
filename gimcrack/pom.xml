@@ -9,7 +9,7 @@
     <artifactId>gimcrack-project</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
-  
+
   <artifactId>gimcrack</artifactId>
 
   <!-- A released version should always follow any of these patterns: -->
@@ -20,6 +20,17 @@
 
   <dependencies>
     <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.2</version>
+    </dependency>
+
+    <!-- persistence -->
+    <dependency>
       <groupId>org.hibernate.javax.persistence</groupId>
       <artifactId>hibernate-jpa-2.0-api</artifactId>
     </dependency>
@@ -28,24 +39,26 @@
       <artifactId>jta</artifactId>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-    </dependency>
-    <dependency>
       <groupId>org.codehaus.btm</groupId>
       <artifactId>btm</artifactId>
     </dependency>
 
     <!-- TEST -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${version.ch.qos.logback}</version>
+      <scope>test</scope>
+    </dependency>
 
-    <!-- persistence -->
+    <!-- persistence test -->
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
       <scope>test</scope>
     </dependency>
 
-    <!-- kie/drools/jbpm -->
+    <!-- kie/drools/jbpm test -->
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-persistence-jpa</artifactId>
