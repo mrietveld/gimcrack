@@ -9,10 +9,11 @@
     <artifactId>jboss-integration-platform-parent</artifactId>
     <version>6.0.0.CR5</version>
   </parent>
-  
+
   <groupId>org.gimcrack</groupId>
-  <artifactId>gimcrack</artifactId>
+  <artifactId>gimcrack-project</artifactId>
   <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
   <!-- A released version should always follow any of these patterns: -->
   <!-- major.minor.micro.Alpha[n] -->
@@ -29,58 +30,65 @@
     <maven.compiler.testTarget>1.6</maven.compiler.testTarget>
   </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.hibernate.javax.persistence</groupId>
-      <artifactId>hibernate-jpa-2.0-api</artifactId>
-      <version>${version.org.hibernate.javax.persistence}</version>
-    </dependency>
-    <dependency>
-      <groupId>javax.transaction</groupId>
-      <artifactId>jta</artifactId>
-      <version>${version.javax.transaction}</version>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${version.junit}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.btm</groupId>
-      <artifactId>btm</artifactId>
-      <version>${version.org.codehaus.btm}</version>
-    </dependency>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.gimcrack</groupId>
+        <artifactId>gimcrack</artifactId>
+        <version>${project.version}</version>
+      </dependency> 
+    
+      <dependency>
+        <groupId>org.hibernate.javax.persistence</groupId>
+        <artifactId>hibernate-jpa-2.0-api</artifactId>
+        <version>${version.org.hibernate.javax.persistence}</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.transaction</groupId>
+        <artifactId>jta</artifactId>
+        <version>${version.javax.transaction}</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${version.junit}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.codehaus.btm</groupId>
+        <artifactId>btm</artifactId>
+        <version>${version.org.codehaus.btm}</version>
+      </dependency>
 
-    <!-- TEST -->
+      <!-- TEST -->
 
-    <!-- persistence -->
-    <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
-      <version>1.3.174</version>
-      <scope>test</scope>
-    </dependency>
+      <!-- persistence -->
+      <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>1.3.174</version>
+        <scope>test</scope>
+      </dependency>
 
-    <!-- kie/drools/jbpm -->
-    <dependency>
-      <groupId>org.drools</groupId>
-      <artifactId>drools-persistence-jpa</artifactId>
-      <version>${kie.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jbpm</groupId>
-      <artifactId>jbpm-persistence-jpa</artifactId>
-      <version>${kie.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jbpm</groupId>
-      <artifactId>jbpm-bpmn2</artifactId>
-      <version>${kie.version}</version>
-      <scope>test</scope>
-    </dependency>
-
-  </dependencies>
+      <!-- kie/drools/jbpm -->
+      <dependency>
+        <groupId>org.drools</groupId>
+        <artifactId>drools-persistence-jpa</artifactId>
+        <version>${kie.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.jbpm</groupId>
+        <artifactId>jbpm-persistence-jpa</artifactId>
+        <version>${kie.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.jbpm</groupId>
+        <artifactId>jbpm-bpmn2</artifactId>
+        <version>${kie.version}</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
 </project>    
