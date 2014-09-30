@@ -10,7 +10,7 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>gimcrack</artifactId>
+  <artifactId>gimcrack-marshalling</artifactId>
 
   <!-- A released version should always follow any of these patterns: -->
   <!-- major.minor.micro.Alpha[n] -->
@@ -19,6 +19,10 @@
   <!-- major.minor.micro.Final -->
 
   <dependencies>
+    <dependency>
+      <groupId>org.gimcrack</groupId>
+      <artifactId>gimcrack-compare</artifactId>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

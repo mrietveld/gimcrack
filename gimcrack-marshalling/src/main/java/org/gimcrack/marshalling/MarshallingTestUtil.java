@@ -14,7 +14,9 @@
 package org.gimcrack.marshalling;
 
 import static org.gimcrack.marshalling.MarshallingDBUtil.getListOfBaseDbVers;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -31,6 +33,7 @@ import javax.transaction.TransactionManager;
 
 import junit.framework.TestCase;
 
+import org.gimcrack.compare.CompareViaReflectionUtil;
 import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;

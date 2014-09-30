@@ -13,6 +13,8 @@
  */
 package org.gimcrack.marshalling;
 
+import org.gimcrack.compare.ClassComparer;
+import org.gimcrack.compare.CompareViaReflectionUtil;
 import org.gimcrack.marshalling.user.MarshalledObjectSpecificActions;
 
 
@@ -22,7 +24,7 @@ public abstract class Gimcrack {
     private ObjectSpecificMarshallingActions marshallingActions = new ObjectSpecificMarshallingActions();
     
     public final void registerClassComparer(Class<?> comparedClass, ClassComparer classComparer) { 
-        this.compareUtil.internalRegisterClassComparer(comparedClass, classComparer);
+        this.compareUtil.registerClassComparer(comparedClass, classComparer);
     }
     
     public void registerMarshalledObjectSpecticAction(MarshalledObjectSpecificActions marshalledObjectSpecificActions) {

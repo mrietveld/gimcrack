@@ -5,7 +5,7 @@ import static org.junit.Assert.fail;
 import java.lang.reflect.Method;
 
 import org.drools.core.util.AbstractHashTable;
-import org.gimcrack.marshalling.ClassComparer;
+import org.gimcrack.compare.ClassComparer;
 import org.junit.Assert;
 
 public class DroolsSetClassComparer extends ClassComparer {

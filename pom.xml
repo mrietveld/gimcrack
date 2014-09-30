@@ -30,11 +30,21 @@
     <maven.compiler.testTarget>1.6</maven.compiler.testTarget>
   </properties>
 
+  <modules>
+    <module>gimcrack-compare</module>
+    <module>gimcrack-marshalling</module>
+  </modules>
+  
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.gimcrack</groupId>
-        <artifactId>gimcrack</artifactId>
+        <artifactId>gimcrack-marshalling</artifactId>
+        <version>${project.version}</version>
+      </dependency> 
+      <dependency>
+        <groupId>org.gimcrack</groupId>
+        <artifactId>gimcrack-compare</artifactId>
         <version>${project.version}</version>
       </dependency> 
     

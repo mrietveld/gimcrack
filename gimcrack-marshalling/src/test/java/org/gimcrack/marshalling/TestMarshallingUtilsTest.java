@@ -15,10 +15,21 @@
  */
 package org.gimcrack.marshalling;
 
-import static org.gimcrack.marshalling.PersistenceUtil.*;
-import static org.gimcrack.marshalling.MarshallingTestUtil.*;
-import static org.gimcrack.marshalling.MarshallingDBUtil.*;
-import static org.junit.Assert.*;
+import static org.gimcrack.marshalling.MarshallingDBUtil.MARSHALLING_BASE_DB;
+import static org.gimcrack.marshalling.MarshallingDBUtil.MARSHALLING_TEST_DB;
+import static org.gimcrack.marshalling.MarshallingDBUtil.generatePathToTestDb;
+import static org.gimcrack.marshalling.MarshallingTestUtil.retrieveMarshallingData;
+import static org.gimcrack.marshalling.PersistenceUtil.DATASOURCE;
+import static org.gimcrack.marshalling.PersistenceUtil.DROOLS_PERSISTENCE_UNIT_NAME;
+import static org.gimcrack.marshalling.PersistenceUtil.ENTITY_MANAGER_FACTORY;
+import static org.gimcrack.marshalling.PersistenceUtil.cleanUp;
+import static org.gimcrack.marshalling.PersistenceUtil.getDatasourceProperties;
+import static org.gimcrack.marshalling.PersistenceUtil.setupPoolingDataSource;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.lang.reflect.Array;
 import java.util.HashMap;

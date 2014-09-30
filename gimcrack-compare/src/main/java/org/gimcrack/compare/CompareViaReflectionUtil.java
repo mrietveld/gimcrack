@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.gimcrack.marshalling;
+package org.gimcrack.compare;
 
 import static org.junit.Assert.*;
 
@@ -132,8 +132,9 @@ public class CompareViaReflectionUtil {
 
     private HashMap<Class<?>, ClassComparer> classComparerMap = new HashMap<Class<?>, ClassComparer>();
    
-    void registerClassComparer(Class<?> comparedClass, ClassComparer classComparer) { 
+    public void registerClassComparer(Class<?> comparedClass, ClassComparer classComparer) { 
         classComparer.register(comparedClass, this);
+        internalRegisterClassComparer(comparedClass, classComparer);
     }
     
     void internalRegisterClassComparer(Class<?> comparedClass, ClassComparer classComparer) { 
